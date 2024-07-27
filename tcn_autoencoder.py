@@ -114,11 +114,13 @@ def train_and_extract_features(X_norm, input_size=1, encoder_channels=[36, 36, 3
         average_train_loss = epoch_train_loss / len(data_loader)
         train_losses.append(average_train_loss)
 
-        if epoch % 5 == 0:  # 每5个epoch打印一次损失
-            print(f'Epoch [{epoch+1}/{num_epochs}], Train Loss: {average_train_loss:.4f}')
+        if epoch % 20 == 0:  # 每5个epoch打印一次损失
+            #print(f'Epoch [{epoch+1}/{num_epochs}], Train Loss: {average_train_loss:.4f}')
+            print(f'Epoch [{epoch+1}/{num_epochs}]')
             scheduler.step(average_train_loss)
         else:
-            print(f'Epoch [{epoch+1}/{num_epochs}], Train Loss: {average_train_loss:.4f}')
+            #print(f'Epoch [{epoch+1}/{num_epochs}], Train Loss: {average_train_loss:.4f}')
+            print(f'Epoch [{epoch+1}/{num_epochs}]')
 
     print("Training complete.")
 
