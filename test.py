@@ -20,7 +20,7 @@ from test_split import split_edges, split_tfs
 
 
 file_name = "mESC"
-adata = sc.read("/home/zfd297/benchmark/dataset/" +file_name + ".h5ad")
+adata = sc.read("./" +file_name + ".h5ad")
 
 filtered_refnet = adata.uns["grn"]
 fea_df = pd.DataFrame(adata.uns["gpt_emb"])
